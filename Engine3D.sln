@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EEngine", "EEngine\EEngine.csproj", "{CFCDB446-AC26-490E-B7A7-AFF8F9FBE043}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Runner3D", "Runner3D\Runner3D.csproj", "{254C4D35-2A30-450F-ABFB-E61AA379FE17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFCDB446-AC26-490E-B7A7-AFF8F9FBE043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFCDB446-AC26-490E-B7A7-AFF8F9FBE043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFCDB446-AC26-490E-B7A7-AFF8F9FBE043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFCDB446-AC26-490E-B7A7-AFF8F9FBE043}.Release|Any CPU.Build.0 = Release|Any CPU
+		{254C4D35-2A30-450F-ABFB-E61AA379FE17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{254C4D35-2A30-450F-ABFB-E61AA379FE17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{254C4D35-2A30-450F-ABFB-E61AA379FE17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{254C4D35-2A30-450F-ABFB-E61AA379FE17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
