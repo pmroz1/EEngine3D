@@ -18,8 +18,6 @@ or you can just download zip file of repo.
 
 ## Development setup
 
-```
-
 ## Release History
 
 * 0.0.1
