@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using EEngine.Actors;
 using EEngine.Core;
 using OpenTK.Mathematics;
 using OpenTK.Windowing.Desktop;
@@ -11,31 +13,32 @@ namespace EEngine.Display
     public class EWindow
     {
         private GameWindow _window;
-        //private bool _logEnabled;
 
+        //private bool _logEnabled;
         private readonly GameInfo _gameInfo;
 
         //private GraphicsMode gm;
-        private
+        private List<IActor> _actors;
 
-            //
-            private readonly float[] _vertices =
-            {
-                -0.5f, -0.5f, 0.0f, // Bottom-left vertex
-                0.5f, -0.5f, 0.0f, // Bottom-right vertex
-                0.0f, 0.5f, 0.0f // Top vertex
-            };
+        //
+        private readonly float[] _vertices =
+        {
+            -0.5f, -0.5f, 0.0f, // Bottom-left vertex
+            0.5f, -0.5f, 0.0f, // Bottom-right vertex
+            0.0f, 0.5f, 0.0f // Top vertex
+        };
 
         private int _vertexBufferObject;
 
         private int _vertexArrayObject;
 
-        private Shader _shader;
+        //private Shader _shader;
         //
 
         public EWindow(bool logEnabled, GameInfo gameInfo)
         {
             _gameInfo = gameInfo;
+            _actors = new List<IActor>();
             if (!logEnabled)
             {
                 //_logEnabled = false;
@@ -70,14 +73,25 @@ namespace EEngine.Display
             }
         }
 
-        private static void RenderFrame(FrameEventArgs obj)
+        private void RenderFrame(FrameEventArgs obj)
         {
-            throw new NotImplementedException();
+            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
+            foreach (var actor in _actors)
+            {
+                actor.Render();
+            }
+
+            _window.SwapBuffers();
         }
 
-        private static void UpdateFrame(FrameEventArgs obj)
+        private void UpdateFrame(FrameEventArgs obj)
         {
-            throw new NotImplementedException();
+            foreach (var actor in _actors)
+            {
+                actor.Update();
+            }
+
+            _window.SwapBuffers();
         }
 
         public void Run()
